@@ -30,7 +30,7 @@ def main():
     grail = requests.get(url, headers = headers)
 
     # required input name and file name
-    fileDict = {'encoded_image': (image, open(image, 'rb'))}
+    fileDict = {'encoded_image': (image.decode('utf-8'), open(image, 'rb'))}
 
     # submit file via multipart/form-data, other fields not required
     r = requests.post(postUrl, files=fileDict, cookies=grail.cookies, headers=headers)

@@ -3,6 +3,7 @@
 __author__ = 'rast'
 
 import requests
+import webbrowser
 from sys import argv
 
 helpStr = "Google image lookup tool. Usage:\n" \
@@ -37,6 +38,7 @@ def main():
     # get the last redirect url, thank you Wireshark!
     result = r.history[-1].url
     print(result)
+    webbrowser.open_new_tab(result)
 
 if __name__ == '__main__':
     main()
